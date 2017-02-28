@@ -1,5 +1,4 @@
-
- # Vue+Spring+Mysql实现可以增删改查的表格
+# Vue+Spring+Mysql实现可以增删改查的表格
 
 1. 前端使用vue框架实现页面展示，Axios 基于Promise 的 HTTP 请求客户端,可同时在浏览器和 node.js 中使用 
 2. 后台服务器使用Spring构建，简化创建 JPA 数据访问层和跨存储的持久层。
@@ -103,7 +102,7 @@ public interface UserRepo extends JpaRepository<User, Long> {
    
 ## Vue前台： 
 
-1. 关于使用sass语法，可以在webpack.config.js中进行配置，在我的项目中，我是在vue-loader.config.js中进行配置,具体可参考[vue-loader文档pre-processors](http://vue-loader.vuejs.org/en/configurations/pre-processors.html)
+### 1. 关于使用sass语法，可以在webpack.config.js中进行配置，在我的项目中，我是在vue-loader.config.js中进行配置,具体可参考[vue-loader文档pre-processors](http://vue-loader.vuejs.org/en/configurations/pre-processors.html)
 ``` 
 module.exports = {
   loaders: [utils.cssLoaders({
@@ -117,8 +116,7 @@ module.exports = {
 }
   ]
 ```
-
-2. 关于es-lint，使用vue-cli构建的项目，默认只会提示而不会修改。因此需要在package.json文件中的lint脚本命令加上--fix，格式如下： 
+### 2. 关于es-lint，使用vue-cli构建的项目，默认只会提示而不会修改。因此需要在package.json文件中的lint脚本命令加上--fix，格式如下： 
 ```
 "scripts": {
   "lint": "eslint --ext .js,.vue src --fix"
@@ -127,7 +125,7 @@ module.exports = {
  这样就可以自动格式化js和.vue代码了。
  
  
-3.  关于实现可编辑的表格控件，普通做法是使用js直接对表单dom元素进行appendChild和remove操作。而vue可以实现的更优雅一些。
+### 3.  关于实现可编辑的表格控件，普通做法是使用js直接对表单dom元素进行appendChild和remove操作。而vue可以实现的更优雅一些。
  
 首先在表格组件的data里初始化一个list对象initialItems用来保存获得的后台数据。对于页面的增删查改只需要相应的改变数组内容。但是这样并不能实现动态更新，所以还需要声明一个计算属性items，这样就可以在initialItems改变的时候自动更新显示内容。具体如下：
  
